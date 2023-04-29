@@ -7,11 +7,17 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class OrderRepository {
-    HashMap<String, Order> orderMap = new HashMap<>();
-    HashMap<String, DeliveryPartner> deliveryPartnerMap = new HashMap<>();
-    HashMap<String, List<String>> pairMap = new HashMap<>();
-    HashMap<String, String> assignedOrder = new HashMap<>();
+    HashMap<String, Order> orderMap;
+    HashMap<String, DeliveryPartner> deliveryPartnerMap;
+    HashMap<String, List<String>> pairMap;
+    HashMap<String, String> assignedOrder;
 
+    public OrderRepository(){
+        this.orderMap = new HashMap<>();
+        this.deliveryPartnerMap  = new HashMap<>();
+        this.pairMap = new HashMap<>();
+        this.assignedOrder = new HashMap<>();
+    }
     public void order_Added(Order order) {
         orderMap.put(order.getId(), order);
     }
