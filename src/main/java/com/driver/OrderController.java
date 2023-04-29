@@ -29,7 +29,7 @@ public class OrderController {
 
     @PostMapping("/add-partner/{partnerId}")
     public ResponseEntity<String> addPartner(@PathVariable String partnerId) {
-        orderService.partnerAdded(id);
+        orderService.partnerAdded(partnerId);
         return new ResponseEntity<>("New delivery partner added successfully", HttpStatus.CREATED);
     }
 
@@ -78,7 +78,7 @@ public class OrderController {
     @GetMapping("/get-all-orders")
     public ResponseEntity<List<String>> getAllOrders() {
         List<String> orders = null;
-        orders = orders.getOrdersAll();
+        orders = orderService.getOrdersAll();
         // Get all orders
         return new ResponseEntity<>(orders, HttpStatus.CREATED);
     }

@@ -2,6 +2,7 @@ package com.driver;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.ArrayList;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -24,9 +25,9 @@ public class OrderRepository {
         List<String> order = new ArrayList<>();
 
         if (pairMap.containsKey(partnerId)) {
-            oreder = pairMap.get(partnerId);
+            order = pairMap.get(partnerId);
         }
-        oreder.add(orderId);
+        order.add(orderId);
         pairMap.put(partnerId, order);
 
         // increment alongside in partner order by 1
